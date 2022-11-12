@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -29,7 +30,10 @@ public class ContactController {
      * @return List of contacts
      */
     @GetMapping
-    public ResponseEntity<ResponseDto> searchContacts(int offset, int size, String name) {
+    public ResponseEntity<ResponseDto> searchContacts(
+            @RequestParam(required = true) Integer offset,
+            @RequestParam(required = true) Integer size,
+            @RequestParam(required = false) String name) {
         ResponseDto<ContactEntity> response =  contactsService.fetchContacts(offset,size, name);
         return new ResponseEntity(response, HttpStatus.OK);
     }

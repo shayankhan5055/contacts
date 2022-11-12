@@ -1,0 +1,42 @@
+{
+	"info": {
+		"_postman_id": "3aa473eb-89cb-4d22-b953-6a5b83d1d5ae",
+		"name": "Conctacts",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Search Contacts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:1010/contacts?name=Simpson&size=10&offset=0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1010",
+					"path": [
+						"contacts"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Simpson"
+						},
+						{
+							"key": "size",
+							"value": "10"
+						},
+						{
+							"key": "offset",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
